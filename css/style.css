@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    /*comportamento do scrolar da tela*/
+}
+
+:root {
+    --primary-color: #7C3AED;
+    --secondary-color: #9333EA;
+    --background-color: #1F2937;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: white;
+    line-height: 1.6;
+}
+
+.home{ /*estilização da seção home*/
+    display: flex; /*para deixar a imagem e o texto na horizontal*/
+    flex-direction: column; /*deixa a imagem e o texto na vertical*/
+    align-items: center; /*centraliza a imagem e o texto*/
+    text-align: center; /*centraliza o texto*/
+    padding: 2rem; /*espaçamento interno margens de dentro*/
+
+}
+
+.menu {
+    position: fixed;
+    /*para fixar o menu quando mexer*/
+    background-color: rgb(167, 139, 250, 0.8); /*esse 0.8 é a transparemcia*/
+    width: 100%;
+    z-index: 100;
+    padding: 1.0rem; /*espaçamento interno margens de dentro*/
+    display: flex; /*para deixar os links na horizontal*/
+    justify-content: center; /*centraliza os links*/
+}
+.menu a {
+    color: white;
+    text-decoration: none; /*tira o sublinhado dos links*/
+    margin: 0 1rem; /*espaçamento entre os links*/
+    font-weight: bold; /*deixa o texto em negrito*/
+   
+}
+.menu a:hover {
+    color: var(--secondary-color);
+    /*muda a cor do link quando passa o mouse por cima*/
+}
+
+.foto_perfil {
+    width: 150px; /*tamanho da imagem*/
+    height: 150px; /*tamanho da imagem*/
+    border-radius: 50%;/*deixa a imagem redonda*/
+    border: 3px solid rgb(247, 241, 241); /*borda branca na imagem*/
+    margin-bottom: 1rem;   /*espaçamento abaixo da imagem*/
+    margin-top: 8rem; /*espaçamento acima da imagem*/
+}
+
+h1 {
+    margin-bottom: 0.5rem; /*espaçamento abaixo do h1*/
+    font-size: 2.5rem; /*tamanho da fonte do h1*/
+    color: rgb(116, 8, 126);
+    font-weight: bold; /*deixa o texto em negrito*/
+    /*word-spacing: 0.1em; /*espaçamento entre as palavras*/
+    
+}
+.paragrafo_home {
+    font-size: 1.2rem; /*tamanho da fonte do parágrafo*/
+    color: white;
+    margin-bottom: 5rem; /*espaçamento abaixo do parágrafo*/
+}
+
+#sobre {
+    scroll-margin-top: 80px; /* ajuste esse valor ao tamanho do seu menu fixo */
+}
+
+
+.sobre{
+    padding: 2rem; /*espaçamento interno margens de dentro*/
+    background-color: rgba(167, 139, 250, 0.336); /*esse 0.8 é a transparemcia*/
+    margin: 2rem; /*espaçamento externo margens de fora*/
+    border-radius: 8px; /*deixa as bordas arredondadas*/
+    max-width: 800px; /*tamanho máximo da seção*/
+    margin-left: auto; /*centraliza a seção*/
+    margin-right: auto; /*centraliza a seção*/
+    
+
+}
+
+.sobre_titulo{
+    text-align: center; /*centralizar o titulo*/;
+    font-size: 2rem; /*tamanho da fonte do h1*/
+    
+
+
+}
+
+.sobre_paragrafo{
+    text-align: center; /*centralizar o parágrafo*/ 
+
+}
+
+#projeto {
+    scroll-margin-top: 100px; /* ajuste para a altura do seu menu */
+}
+
+
+.projetos{
+    padding: 6rem 2rem; /*espaçamento interno margens de dentro*/
+
+     
+
+}
+
+.projetoh2{
+    text-align: center; /*centralizar o titulo*/;
+    font-size: 2rem; /*tamanho da fonte do h1*/
+    margin-bottom: 1.5rem; /*espaçamento abaixo do h2*/
+}
+
+.projetos_caixa:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.05);/*eu movimento ele e o tempo */
+
+}
+
+.img_projeto1{
+    height: 200px;
+    width: 100%;
+    object-fit: contain; /*para a imagem não ficar distorcida*/
+    margin-top: 30px;
+    
+}
+.projeto_paragrafo{
+    padding: 0 1rem; /*espaçamento interno margens de dentro*/
+    font-size: 1rem; /*tamanho da fonte do parágrafo*/
+    margin: 1rem 0; /*espaçamento acima e abaixo do parágrafo*/
+    text-align: center; /*centralizar o parágrafo*/
+    color: rgb(226,232,240,0.8);
+    
+}
+
+.projetos_caixa{
+    display: grid; /*para deixar os projetos na horizontal*/
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /*para deixar os projetos na horizontal e responsivo*/
+    /*grid-temple... foi para criar colunas, se repetem e ele pois para encaixar na tela (autto-fit) e qual o tamanho delas? ai pois no minimo 300px e max a tela toda 1fra*/
+    grid-area: 20px; /*espaçamento entre os projetos*/
+    max-width: 800px; /*tamanho máximo da seção*/
+    margin: 0 auto; /*centraliza a seção*/
+  
+}
+
+    
+
+.h3_jbf{
+    text-align: center; /*centralizar o titulo*/;
+    font-size: 1.5rem; /*tamanho da fonte do h1*/
+    margin-top: 1rem; /*espaçamento acima do h3*/
+    color: rgb(226,232,240,0.8);
+}
+
+
+    
+.botao_projeto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(116, 8, 126); /* Azul, você pode trocar */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.botao_projeto:hover {
+    background-color: #8a20aa; /* Tom mais escuro no hover */
+}
+
+/* Para centralizar o botão dentro do card */
+.projetos_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+   
+    backdrop-filter: blur(10px);/* efeito de desfoque */
+    overflow: hidden;/* para garantir que o conteúdo não ultrapasse as bordas arredondadas */
+}
+
+#contato {
+    scroll-margin-top: 100px; /* ajuste para a altura do seu menu */
+}
+
+
+
+
+.contato_titulo{
+    text-align: center; /*centralizar o titulo*/;
+    font-size: 2rem; /*tamanho da fonte do h1*/
+    margin-bottom: 1.5rem; /*espaçamento abaixo do h2*/
+
+    
+}
+
+.contato{
+    padding: 6rem 2rem; /*espaçamento interno margens de dentro*/
+
+
+}
+.formulario_contato{
+    max-width: 600px; /*tamanho máximo do formulário*/
+    margin: 0 auto; /*centraliza o formulário*/
+    background-color: rgba(167, 139, 250, 0.336); /*esse 0.8 é a transparemcia*/
+    backdrop-filter: blur(10px);/* efeito de desfoque */
+    padding: 2rem; /*espaçamento interno margens de dentro*/
+    border: 8px; /*deixa as bordas arredondadas*/
+    border-radius: 16px; /*deixa as bordas arredondadas*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*sombra do formulário*/
+    
+
+    
+}
+
+.campo_form{
+    width: 100%;
+    padding: 1rem;
+    background-color:rgba(167, 139, 250, 0.336) ;
+    border-radius: 5px;
+    border: 1px solid rgb(140, 0, 255);
+    outline: none;
+    
+}
+
+.grupo_form{
+    margin-bottom: 1.5rem;
+    
+
+}
+
+.botao_form{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(140, 0, 255);
+    
+
+}
+
+.botao_form:hover{
+    background-color: #8a20aa; /* Tom mais escuro no hover*/
+    color: white;
+    transform: translateY(-4px);/*eu movimento ele e o tempo */
+}
+
+
+input,
+textarea {
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+
+.footer {
+  background-color: #2b0a5c; /* Roxo escuro elegante */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #25D366; /* verde tipo WhatsApp */
+}
+
+.footer-links img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+
+
+.gtranslate_wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: #14c270;
+
+  }
+
+  .whatsapp {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 1000;
+}
+
+.fa-whatsapp {
+  margin-top: 16px;
+}
+
+.whatsapp:hover {
+  background-color: #39d325;
+}
