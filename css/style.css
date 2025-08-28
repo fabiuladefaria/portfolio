@@ -124,11 +124,6 @@ h1 {
     margin-bottom: 1.5rem; /*espaçamento abaixo do h2*/
 }
 
-.projetos_caixa:hover{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-10px) scale(1.05);/*eu movimento ele e o tempo */
-
-}
 
 .img_projeto1{
     height: 200px;
@@ -153,7 +148,12 @@ h1 {
     grid-area: 20px; /*espaçamento entre os projetos*/
     max-width: 800px; /*tamanho máximo da seção*/
     margin: 0 auto; /*centraliza a seção*/
+    gap: 2rem; /*espaçamento entre os projetos*/
   
+}
+.projetos_card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
     
@@ -309,7 +309,7 @@ textarea::placeholder {
 }
 
 .footer-links a:hover {
-  color: #25D366; /* verde tipo WhatsApp */
+  color: #25D366; 
 }
 
 .footer-links img {
