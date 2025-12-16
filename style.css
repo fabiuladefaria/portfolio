@@ -184,7 +184,7 @@ button,
 }
 
 .card:nth-child(1) .thumb {
-    background-image: url();
+    background-image: url("img/biblioteca.png");
     background-size: cover;
     background-position: center;
 }
@@ -203,6 +203,11 @@ button,
 
 .card:nth-child(4) .thumb {
     background-image: url("img/academia.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+.card:nth-child(5) .thumb {
+    background-image: url("img/receitas.png");
     background-size: cover;
     background-position: center;
 }
