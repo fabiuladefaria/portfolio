@@ -60,12 +60,21 @@
     <p>Aqui estão alguns dos meus trabalhos mais recentes.</p>
     <button class="btn-solid small">Ver mais</button>
     <div class="cards">
+
+        <div class="card">
+            <a href="" target="_blank">
+                <div class="thumb"></div>
+                <span class="tag">Web App</span>
+                <h4>Biblioteca Municipal</h4>
+                <p>HTML, CSS, JavaScript, PHP, MYSQL</p>
+            </a>
+        </div>
        
             <div class="card">
-    <a href="https://fabiuladefaria.github.io/site-academia/" target="_blank">
+    <a href="https://fabiuladefaria.github.io/motoPecas/ " target="_blank">
         <div class="thumb"></div>
         <span class="tag">Web App</span>
-        <h4>Impulse Academia</h4>
+        <h4>Moto Peças</h4>
         <p>HTML, CSS, JavaScript</p>
     </a>
 </div>
@@ -76,23 +85,21 @@
             <a href="https://fabiuladefaria.github.io/motoPecas/" target="_blank">
                 <div class="thumb"></div>
                 <span class="tag">Web App</span>
-                <h4>Moto Peças</h4>
+                <h4>Gráfica</h4>
                 <p>HTML, CSS, JavaScript</p>
             </a>
         </div>
 
         <div class="card">
-            <div class="thumb"></div>
-            <span class="tag">Aplicativo Móvel</span>
-            <h4>Projeto 2</h4>
-            <p>Angular, HTML, SCSS</p>
+            <a href="https://fabiuladefaria.github.io/site-academia/" target="_blank">
+                <div class="thumb"></div>
+                <span class="tag">Web App</span>
+                <h4>Academia Impulse</h4>
+                <p>HTML, CSS, JavaScript</p>
+            </a>
         </div>
-        <div class="card">
-            <div class="thumb"></div>
-            <span class="tag">Landing Page</span>
-            <h4>Projeto 3</h4>
-            <p>Vue.js, Tailwind CSS</p>
-        </div>
+
+        
     </div>
 </section>
 
@@ -136,45 +143,81 @@
 
 
 <!-- CURSOS -->
+<!-- CURSOS -->
 <section id="cursos" class="cursos fade-in">
     <h2>Meus Cursos</h2>
     <p>Alguns dos cursos que concluí ou estou cursando.</p>
+
     <div class="cursos-container">
+
         <div class="curso-card">
             <h3>Técnico em Desenvolvimento de Sistemas</h3>
             <span class="inst">Etec São Paulo • Cursando</span>
-            <button class="ver-certificado" data-img="certificado-html.jpg">Certificado</button>
+            <a href="pdf/Declaracao_Matricula_22197.pdf" target="_blank" class="ver-certificado">
+               Certificado
+            </a>
         </div>
+
         <div class="curso-card">
-            <h3>Administrador de Banco de Dados </h3>
-            <span class="inst">Senai • 2025</span>
-            <button class="ver-certificado" data-img="certificado-logica.jpg">Certificado</button>
+            <h3>Administrador de Banco de Dados</h3>
+            <span class="inst">Senai • Cursando</span>
+            <a href="certificados/banco-dados.pdf" target="_blank" class="ver-certificado">
+              Certificado
+            </a>
         </div>
-        
+
         <div class="curso-card">
             <h3>Web Designer</h3>
             <span class="inst">Senai • 2025</span>
-            <button class="ver-certificado" data-img="certificado-fullstack.jpg">Certificado</button>
+            <a href="pdf/DeclaracaoMatriculaRegular_Web designer - Front-En.pdf" target="_blank" class="ver-certificado">
+                 Certificado
+            </a>
         </div>
+
         <div class="curso-card">
             <h3>Programação Java</h3>
             <span class="inst">Senai • 2025</span>
-            <button class="ver-certificado" data-img="certificado-html.jpg">Certificado</button>
+            <a href="pdf/Certificado_PROGRAMAÇÃO JAV.pdf" target="_blank" class="ver-certificado">
+               Certificado
+            </a>
         </div>
-         <div class="curso-card">
-            <h3>Desenvolvedor Mobile</h3>
-            <span class="inst">Jamilton Damasceno • 2025</span>
-            <button class="ver-certificado" data-img="certificado-html.jpg">Certificado</button>
-        </div>
+
         <div class="curso-card">
-            <h3>Ténico em Administração</h3>
-            <span class="inst">Senac • 2017</span>
-            <button class="ver-certificado" data-img="certificado-html.jpg">Certificado</button>
+            <h3>Desenvolvedor Mobile</h3>
+            <span class="inst">Jamilton Damasceno • Cursando</span>
+            <a href="certificados/mobile.pdf" target="_blank" class="ver-certificado">
+                Certificado
+            </a>
+        </div>
+        
+         <div class="curso-card">
+            <h3>Assistente Financeiro</h3>
+            <span class="inst">Senac • 2021</span>
+            <a href="pdf/" target="_blank" class="ver-certificado">
+            Certificado
+            </a>
         </div>
        
 
+        <div class="curso-card">
+            <h3>Técnico em Administração</h3>
+            <span class="inst">Senac • 2018</span>
+            <a href="pdf/certificado_adm (1).pdf" target="_blank" class="ver-certificado">
+            Certificado
+            </a>
+        </div>
+
+          <div class="curso-card">
+            <h3>Operador de Computador</h3>
+            <span class="inst">Prepara • 2017</span>
+            <a href="pdf/operador_prepara.pdf" target="_blank" class="ver-certificado">
+            Certificado
+            </a>
+        </div>
+
     </div>
 </section>
+
 
 <!--certificado -->
 <div class="modal" id="modalCertificado">
@@ -198,7 +241,7 @@
         <textarea name="message" placeholder="Sua mensagem aqui" required></textarea>
 
         <input type="hidden" name="apiKey" value="sf_2235ijkefc323a4b565lk31m">
-        <input type="hidden" name="redirectTo" value="obg.html">
+        <input type="hidden" name="redirectTo" value="https://fabiuladefaria.github.io/portfolio/obg.html">
 
         <div class="form-buttons">
             <button type="reset" class="btn-outline">Cancelar</button>

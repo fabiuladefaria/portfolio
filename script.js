@@ -1,33 +1,47 @@
-// Seleciona o formulário
+// ===== FORMULÁRIO =====
 const form = document.querySelector('.form-contato');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita o envio padrão
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-    // Pega os valores dos campos
-    const nome = form.nome.value.trim();
-    const email = form.email.value.trim();
-    const telefone = form.telefone.value.trim();
-    const mensagem = form.mensagem.value.trim();
+        const nome = form.nome.value.trim();
+        const email = form.email.value.trim();
+        const telefone = form.telefone.value.trim();
+        const mensagem = form.mensagem.value.trim();
 
-    // Verifica se todos os campos foram preenchidos
-    if (!nome || !email || !telefone || !mensagem) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-    }
+        if (!nome || !email || !telefone || !mensagem) {
+            alert('Preencha todos os campos.');
+            return;
+        }
 
-    // Monta a mensagem do email
-    const assunto = encodeURIComponent(`Contato do site - ${nome}`);
-    const corpo = encodeURIComponent(
-        `Nome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`
-    );
+        const assunto = encodeURIComponent(`Contato do site - ${nome}`);
+        const corpo = encodeURIComponent(
+            `Nome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`
+        );
 
-    // Email de destino
-    const destinatario = 'contato@graficacriativa.com.br'; // Substitua pelo seu email
+        // Vai para página de obrigado
+        window.location.href = 'obg.html';
 
-    // Abre o cliente de email do usuário
-    window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
+        // Abre o e-mail
+        setTimeout(() => {
+            window.open(
+                `mailto:fabiulafaria@gmail.com?subject=${assunto}&body=${corpo}`,
+                '_blank'
+            );
+        }, 300);
 
-    // Limpa o formulário
-    form.reset();
-});
+        return false; // trava total do submit
+    });
+}
+
+// ===== MENU HAMBURGUER =====
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+
+if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+}
