@@ -1,90 +1,33 @@
-// ===== MODAL DE CERTIFICADOS =====
-const modal = document.getElementById('modalCertificado');
-const modalImg = document.getElementById('modalImg');
-const closeModal = document.getElementById('closeModal');
+// Seleciona o formulário
+const form = document.querySelector('.form-contato');
 
-document.querySelectorAll('.ver-certificado').forEach(btn => {
-    btn.addEventListener('click', () => {
-        modal.style.display = 'flex';
-        modalImg.src = btn.getAttribute('data-img');
-    });
-});
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita o envio padrão
 
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+    // Pega os valores dos campos
+    const nome = form.nome.value.trim();
+    const email = form.email.value.trim();
+    const telefone = form.telefone.value.trim();
+    const mensagem = form.mensagem.value.trim();
 
-// Fecha modal clicando fora da imagem
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
+    // Verifica se todos os campos foram preenchidos
+    if (!nome || !email || !telefone || !mensagem) {
+        alert('Por favor, preencha todos os campos.');
+        return;
     }
+
+    // Monta a mensagem do email
+    const assunto = encodeURIComponent(`Contato do site - ${nome}`);
+    const corpo = encodeURIComponent(
+        `Nome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`
+    );
+
+    // Email de destino
+    const destinatario = 'contato@graficacriativa.com.br'; // Substitua pelo seu email
+
+    // Abre o cliente de email do usuário
+    window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
+
+    // Limpa o formulário
+    form.reset();
 });
-
-// ===== FORMULÁRIO DE CONTATO =====
-const form = document.getElementById("formContato");
-
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Animação do botão
-    const botao = form.querySelector(".btn-solid");
-    botao.style.transform = "scale(0.95)";
-    setTimeout(() => botao.style.transform = "scale(1)", 200);
-
-    // Envia o formulário para o StaticForms
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: form.method,
-        body: formData
-    })
-    .then(() => {
-        window.location.href = "obg.html";
-    })
-    .catch(() => {
-        window.location.href = "obg.html";
-    });
-});
-
-// ===== BUSCA COM DESTAQUE E ROLAGEM =====
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-
-        const query = searchInput.value.toLowerCase().trim();
-        if (!query) return;
-
-        const sections = document.querySelectorAll("h1, h2, h3, h4, p");
-
-        // Limpa highlights anteriores
-        sections.forEach(el => {
-            el.style.backgroundColor = "transparent";
-        });
-
-        let firstMatch = null;
-
-        sections.forEach(el => {
-            if (el.textContent.toLowerCase().includes(query)) {
-                if (!firstMatch) firstMatch = el;
-            }
-        });
-
-        if (firstMatch) {
-            // Rola suavemente 
-            firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-            alert("Nenhum resultado encontrado.");
-        }
-    }
-});
-// MENU MOBILE
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-
