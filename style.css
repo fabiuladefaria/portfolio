@@ -211,6 +211,11 @@ button,
     background-size: cover;
     background-position: center;
 }
+.card:nth-child(6) .thumb {
+    background-image: url("img/majestic.png");
+    background-size: cover;
+    background-position: center;
+}
 /* ===== CURS ===== */
 .cursos {
     padding: 90px 50px;
